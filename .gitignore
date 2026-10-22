@@ -1,0 +1,23 @@
+# --- Python --------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# --- Jupyter -------------------------------------------------------------
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# --- Cache de Hugging Face (descargas locales) ---------------------------
+.hf_cache/
+.cache/
+
+# --- Sistema -------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Archivos temporales de Word / Excel ---------------------------------
+~$*

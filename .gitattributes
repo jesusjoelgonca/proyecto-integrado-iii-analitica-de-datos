@@ -1,0 +1,13 @@
+# Normaliza los finales de linea para que el proyecto se vea igual en
+# Windows, Linux y macOS (el docente puede abrirlo en VS Code Web).
+* text=auto eol=lf
+
+# El cuaderno es texto: se versiona con LF para que el diff sea legible.
+*.ipynb text eol=lf
+
+# Binarios: sin conversion de finales de linea.
+*.png binary
+*.jpg binary
+*.pdf binary
+*.xlsx binary
+*.docx binary
