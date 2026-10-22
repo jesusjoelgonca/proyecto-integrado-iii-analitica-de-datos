@@ -105,6 +105,38 @@ dos derivadas.
   identificador: dos flores con las mismas cuatro medidas.
 - 29 pruebas automatizadas, todas en verde en Linux y Windows.
 
+## Evidencias de ejecución
+
+Comprobado sobre un clon limpio del repositorio y borrando antes el `.txt`, para
+verificar que lo genera la ejecución y no está copiado a mano:
+
+| Evidencia | Resultado |
+| --- | --- |
+| Carga desde Hugging Face | `scikit-learn/iris`, split `train`, 150 filas × 6 columnas |
+| Cuaderno | 25 celdas (11 de código), todas ejecutadas, sin errores |
+| Resultados mostrados | 9 tablas: una por transformación más la de verificación |
+| Comprobaciones del cuaderno | 10 de 10 superadas |
+| Archivo generado | `reports/resumen_dataset_transformado.txt` (2 638 bytes) |
+| Pruebas automatizadas | `Ran 29 tests … OK` |
+| Integración continua | En verde en `ubuntu-latest` y `windows-latest` |
+
+Salida de la celda de verificación del cuaderno:
+
+```
+10 comprobaciones superadas · resumen_dataset_transformado.txt: 2638 bytes
+```
+
+Salida de la suite de pruebas:
+
+```
+Ran 29 tests in 0.104s
+
+OK
+```
+
+El resumen regenerado es idéntico al versionado salvo la línea `Generado`, que
+contiene la marca de tiempo de la ejecución.
+
 ## Relación con la rúbrica
 
 | Criterio | Pts | Dónde se evidencia |
