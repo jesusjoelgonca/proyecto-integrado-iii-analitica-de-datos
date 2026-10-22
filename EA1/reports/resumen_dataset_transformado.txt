@@ -2,7 +2,7 @@
                                   RESUMEN DEL DATASET
 ========================================================================================
 Nombre    : Iris transformado (EA1)
-Generado  : 2026-10-21 19:13:51
+Generado  : 2026-10-21 19:16:00
 Origen    : Hugging Face · scikit-learn/iris · split=train
 
 1. DIMENSIONES
