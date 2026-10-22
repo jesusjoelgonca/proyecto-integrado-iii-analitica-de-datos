@@ -1,0 +1,50 @@
+========================================================================================
+                                  RESUMEN DEL DATASET
+========================================================================================
+Nombre    : Iris transformado (EA1)
+Generado  : 2026-10-21 19:13:51
+Origen    : Hugging Face · scikit-learn/iris · split=train
+
+1. DIMENSIONES
+----------------------------------------------------------------------------------------
+Filas      : 75
+Columnas   : 8
+Memoria    : 5.5 KB
+Duplicados : 1 filas (1.33 %)
+
+2. COLUMNAS Y TIPOS
+----------------------------------------------------------------------------------------
+#  columna             tipo     no_nulos  nulos  nulos_%  unicos  ejemplo
+-  ------------------  -------  --------  -----  -------  ------  ---------
+1  largo_sepalo_cm     float64        75      0      0.0      24  7.7
+2  ancho_sepalo_cm     float64        75      0      0.0      14  2.6
+3  largo_petalo_cm     float64        75      0      0.0      24  6.9
+4  ancho_petalo_cm     float64        75      0      0.0      14  2.3
+5  especie             str            75      0      0.0       2  virginica
+6  area_petalo_cm2     float64        75      0      0.0      60  15.87
+7  ratio_petalo        float64        75      0      0.0      53  3.0
+8  area_media_especie  float64        75      0      0.0       2  11.3
+
+3. VALORES NULOS
+----------------------------------------------------------------------------------------
+Sin valores nulos: todas las columnas estan completas.
+
+4. ESTADISTICAS DESCRIPTIVAS (COLUMNAS NUMERICAS)
+----------------------------------------------------------------------------------------
+columna              n  media  desv_est   min  mediana    max
+------------------  --  -----  --------  ----  -------  -----
+largo_sepalo_cm     75   6.48      0.59  4.90     6.40   7.90
+ancho_sepalo_cm     75   2.96      0.31  2.20     3.00   3.80
+largo_petalo_cm     75   5.24      0.64  4.20     5.10   6.90
+ancho_petalo_cm     75   1.84      0.35  1.20     1.80   2.50
+area_petalo_cm2     75   9.80      2.79  5.64     9.69  15.87
+ratio_petalo        75   2.91      0.41  2.12     2.94   4.00
+area_media_especie  75   9.81      2.13  6.82    11.30  11.30
+
+5. VARIABLES CATEGORICAS
+----------------------------------------------------------------------------------------
+especie (2 categorias): virginica (50), versicolor (25)
+
+========================================================================================
+                                    Fin del resumen
+========================================================================================
