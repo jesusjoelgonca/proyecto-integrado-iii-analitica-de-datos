@@ -14,15 +14,23 @@ carpeta (`EA1/`, `EA2/`, …) y comparte las dependencias de la raíz.
 .
 ├── .github/workflows/ci.yml     Integración continua (Linux y Windows)
 ├── requirements.txt             Dependencias del curso
-└── EA1/                         Carga y creación de dataset
-    ├── Gonzalez_Jesus_EA1.ipynb Cuaderno que coordina el flujo
-    ├── src/
-    │   ├── config.py            Dataset, split y rutas
-    │   ├── hf_loader.py         Clase HFDatasetLoader
-    │   └── dataset_summarizer.py Clase DatasetSummarizer
-    ├── tests/                   Pruebas de las clases y de los entregables
-    └── reports/
-        └── resumen_dataset_transformado.txt
+├── EA1/                         Carga y creación de dataset
+│   ├── Gonzalez_Jesus_EA1.ipynb Cuaderno que coordina el flujo
+│   ├── src/
+│   │   ├── config.py            Dataset, split y rutas
+│   │   ├── hf_loader.py         Clase HFDatasetLoader
+│   │   └── dataset_summarizer.py Clase DatasetSummarizer
+│   ├── tests/                   Pruebas de las clases y de los entregables
+│   └── reports/
+│       └── resumen_dataset_transformado.txt
+└── AE3/                         Transformación y enriquecimiento de datos
+    ├── Gonzalez_Jesus_AE3.ipynb Cuaderno de la etapa (ejecutado)
+    ├── src/                     Clases reutilizadas de EA1
+    ├── datos/
+    │   └── dataset_preparado.csv
+    ├── resultados/              Tablas de resultados (.csv) y resumen (.txt)
+    └── doc/
+        └── Gonzalez_Jesus_AE3.docx  Documento de avance
 ```
 
 ## Instalación
@@ -147,3 +155,72 @@ contiene la marca de tiempo de la ejecución.
 | Clase para resumir y exportar | 20 | `src/dataset_summarizer.py` + `reports/*.txt` |
 | Transformaciones en Jupyter | 10 | Siete transformaciones en el cuaderno, con resultados visibles |
 | Funcionamiento y evidencias | 25 | Cuaderno ejecutado sin errores, 29 pruebas y CI en verde |
+
+---
+
+# AE3 — Transformación y enriquecimiento de datos
+
+Segunda etapa del proyecto integrador sobre el mismo dataset (`scikit-learn/iris`,
+cargado desde Hugging Face con la clase de EA1). El cuaderno
+`AE3/Gonzalez_Jesus_AE3.ipynb` transforma los datos, los enriquece con variables
+calculadas y responde cuatro preguntas de negocio con tablas exportadas.
+
+## Necesidad y preguntas de negocio
+
+La etapa anterior no había formalizado las preguntas del proyecto, así que esta
+las define y las deja registradas (ajuste documentado en el cuaderno y en el
+documento de avance). La necesidad es una caracterización descriptiva de las tres
+especies a partir de sus medidas morfológicas.
+
+| # | Pregunta | Tabla de resultados |
+| --- | --- | --- |
+| P1 | ¿Cómo se caracteriza morfológicamente cada especie? | `resultados/tabla_p1_perfil_especies.csv` |
+| P2 | ¿Las especies se diferencian más por el sépalo o por el pétalo? | `resultados/tabla_p2_variacion_medidas.csv` |
+| P3 | ¿Qué relación existe entre las medidas del sépalo y las del pétalo? | `resultados/tabla_p3_correlaciones.csv` |
+| P4 | ¿Cómo se distribuyen los ejemplares según el tamaño de la flor? | `resultados/tabla_p4_categorias_tamano.csv` y `tabla_p4_cruce_especie_tamano.csv` |
+
+## Transformaciones aplicadas
+
+1. Verificación de tipos contra los documentados por el dataset (sin desajustes).
+2. Renombrar las seis columnas al español con la unidad en el nombre.
+3. Normalizar la especie: quitar el prefijo `Iris-` y pasar a minúscula (150 valores).
+4. Control de valores faltantes: ninguno detectado, sin tratamiento.
+5. Control de duplicados: dos grupos con medidas idénticas (5 flores); se conservan porque son ejemplares distintos.
+6. Control de atípicos con la regla 1,5 × RIC: 4 anchos de sépalo fuera del rango; se conservan tras revisarlos.
+7. Descartar el identificador numérico; ninguna fila eliminada (150 en todo momento).
+
+## Enriquecimiento
+
+Cuatro variables calculadas sobre las medidas existentes (sin fuentes externas):
+`area_sepalo_cm2`, `area_petalo_cm2`, `ratio_petalo` y `tamano_flor` (categoría
+Pequeña / Media / Grande por terciles del área del pétalo, con cortes en 2,52 y
+7,71 cm²).
+
+## Ejecución y archivos generados
+
+```bash
+cd AE3 && jupyter nbconvert --to notebook --execute --inplace Gonzalez_Jesus_AE3.ipynb
+```
+
+O abrir el cuaderno y usar *Run All*. La ejecución regenera:
+
+| Archivo | Contenido |
+| --- | --- |
+| `datos/dataset_preparado.csv` | DataFrame final: 150 filas × 9 columnas |
+| `resultados/tabla_p1…p4_*.csv` | Cinco tablas de resultados, una o dos por pregunta |
+| `resultados/resumen_dataset_ae3.txt` | Resumen descriptivo del DataFrame final, generado con `DatasetSummarizer` |
+
+La integración continua del repositorio (`ci.yml`) ejecuta este cuaderno de
+principio a fin en `ubuntu-latest` y `windows-latest` y comprueba que los
+archivos se regeneren, así que la compatibilidad con Linux queda validada en
+cada cambio.
+
+El cuaderno termina con 7 comprobaciones automáticas (totales, porcentajes y
+coincidencia de los CSV exportados con lo calculado), todas en verde en la
+ejecución entregada.
+
+## Documento de avance
+
+`doc/Gonzalez_Jesus_AE3.docx` registra la metodología, las reglas de calidad, el
+diccionario actualizado, los resultados con su discusión y las conclusiones del
+avance. Su contenido coincide con el cuaderno y con los archivos exportados.
