@@ -1,0 +1,4 @@
+﻿especie,Pequeña,Media,Grande
+setosa,50 flores (100.0 %),0 flores (0.0 %),0 flores (0.0 %)
+versicolor,0 flores (0.0 %),47 flores (94.0 %),3 flores (6.0 %)
+virginica,0 flores (0.0 %),3 flores (6.0 %),47 flores (94.0 %)

@@ -1,0 +1,52 @@
+========================================================================================
+                                  RESUMEN DEL DATASET
+========================================================================================
+Nombre    : Iris transformado y enriquecido (AE3)
+Generado  : 2026-11-07 11:53:24
+Origen    : Hugging Face · scikit-learn/iris · split=train
+
+1. DIMENSIONES
+----------------------------------------------------------------------------------------
+Filas      : 150
+Columnas   : 9
+Memoria    : 17.2 KB
+Duplicados : 3 filas (2.00 %)
+
+2. COLUMNAS Y TIPOS
+----------------------------------------------------------------------------------------
+#  columna          tipo      no_nulos  nulos  nulos_%  unicos  ejemplo
+-  ---------------  --------  --------  -----  -------  ------  -------
+1  largo_sepalo_cm  float64        150      0      0.0      35  5.1
+2  ancho_sepalo_cm  float64        150      0      0.0      23  3.5
+3  largo_petalo_cm  float64        150      0      0.0      43  1.4
+4  ancho_petalo_cm  float64        150      0      0.0      22  0.2
+5  especie          object         150      0      0.0       3  setosa
+6  area_sepalo_cm2  float64        150      0      0.0     108  17.85
+7  area_petalo_cm2  float64        150      0      0.0      97  0.28
+8  ratio_petalo     float64        150      0      0.0      83  7.0
+9  tamano_flor      category       150      0      0.0       3  Pequeña
+
+3. VALORES NULOS
+----------------------------------------------------------------------------------------
+Sin valores nulos: todas las columnas estan completas.
+
+4. ESTADISTICAS DESCRIPTIVAS (COLUMNAS NUMERICAS)
+----------------------------------------------------------------------------------------
+columna            n  media  desv_est    min  mediana    max
+---------------  ---  -----  --------  -----  -------  -----
+largo_sepalo_cm  150   5.84      0.83   4.30     5.80   7.90
+ancho_sepalo_cm  150   3.05      0.43   2.00     3.00   4.40
+largo_petalo_cm  150   3.76      1.76   1.00     4.35   6.90
+ancho_petalo_cm  150   1.20      0.76   0.10     1.30   2.50
+area_sepalo_cm2  150  17.81      3.37  10.00    17.66  30.02
+area_petalo_cm2  150   5.79      4.71   0.11     5.62  15.87
+ratio_petalo     150   4.37      2.65   2.12     3.30  15.00
+
+5. VARIABLES CATEGORICAS
+----------------------------------------------------------------------------------------
+especie (3 categorias): setosa (50), versicolor (50), virginica (50)
+tamano_flor (3 categorias): Pequeña (50), Media (50), Grande (50)
+
+========================================================================================
+                                    Fin del resumen
+========================================================================================

@@ -1,0 +1,17 @@
+﻿par_de_variables,alcance,correlacion_pearson,n_flores
+largo_sepalo_cm × largo_petalo_cm,Global,0.87,150
+largo_sepalo_cm × largo_petalo_cm,setosa,0.26,50
+largo_sepalo_cm × largo_petalo_cm,versicolor,0.75,50
+largo_sepalo_cm × largo_petalo_cm,virginica,0.86,50
+largo_sepalo_cm × ancho_petalo_cm,Global,0.82,150
+largo_sepalo_cm × ancho_petalo_cm,setosa,0.28,50
+largo_sepalo_cm × ancho_petalo_cm,versicolor,0.55,50
+largo_sepalo_cm × ancho_petalo_cm,virginica,0.28,50
+ancho_sepalo_cm × largo_petalo_cm,Global,-0.42,150
+ancho_sepalo_cm × largo_petalo_cm,setosa,0.18,50
+ancho_sepalo_cm × largo_petalo_cm,versicolor,0.56,50
+ancho_sepalo_cm × largo_petalo_cm,virginica,0.4,50
+ancho_sepalo_cm × ancho_petalo_cm,Global,-0.36,150
+ancho_sepalo_cm × ancho_petalo_cm,setosa,0.28,50
+ancho_sepalo_cm × ancho_petalo_cm,versicolor,0.66,50
+ancho_sepalo_cm × ancho_petalo_cm,virginica,0.54,50
