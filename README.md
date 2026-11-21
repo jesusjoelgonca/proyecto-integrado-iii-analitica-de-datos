@@ -6,7 +6,7 @@
 **Estudiante:** Jesús González
 
 Repositorio de trabajo del curso. Cada evidencia de aprendizaje vive en su propia
-carpeta (`EA1/`, `EA2/`, …) y comparte las dependencias de la raíz.
+carpeta (`EA1/`, `AE3/`, `AE4/`) y comparte las dependencias de la raíz.
 
 ## Contenido
 
@@ -23,14 +23,20 @@ carpeta (`EA1/`, `EA2/`, …) y comparte las dependencias de la raíz.
 │   ├── tests/                   Pruebas de las clases y de los entregables
 │   └── reports/
 │       └── resumen_dataset_transformado.txt
-└── AE3/                         Transformación y enriquecimiento de datos
-    ├── Gonzalez_Jesus_AE3.ipynb Cuaderno de la etapa (ejecutado)
-    ├── src/                     Clases reutilizadas de EA1
-    ├── datos/
-    │   └── dataset_preparado.csv
-    ├── resultados/              Tablas de resultados (.csv) y resumen (.txt)
-    └── doc/
-        └── Gonzalez_Jesus_AE3.docx  Documento de avance
+├── AE3/                         Transformación y enriquecimiento de datos
+│   ├── Gonzalez_Jesus_AE3.ipynb Cuaderno de la etapa (ejecutado)
+│   ├── src/                     Clases reutilizadas de EA1
+│   ├── datos/
+│   │   └── dataset_preparado.csv
+│   ├── resultados/              Tablas de resultados (.csv) y resumen (.txt)
+│   └── doc/
+│       └── Gonzalez_Jesus_AE3.docx  Documento de avance
+└── AE4/                         Métricas y visualización de datos
+    ├── app.py                   Aplicación Streamlit del proyecto
+    ├── doc/
+    │   ├── Gonzalez_Jesus_AE4.pdf   Documento completo del proyecto
+    │   └── images/              Figuras de los gráficos (300 dpi)
+    └── datos/                   (la app lee los datos y tablas de AE3)
 ```
 
 ## Instalación
@@ -224,3 +230,62 @@ ejecución entregada.
 `doc/Gonzalez_Jesus_AE3.docx` registra la metodología, las reglas de calidad, el
 diccionario actualizado, los resultados con su discusión y las conclusiones del
 avance. Su contenido coincide con el cuaderno y con los archivos exportados.
+
+---
+
+# AE4 — Métricas y visualización de datos (proyecto integrador)
+
+Tercera etapa del proyecto integrador sobre el dataset de iris. Los resultados de
+la AE3 se presentan en una **aplicación Streamlit** que recorre la necesidad, las
+cuatro preguntas de negocio y sus respuestas, con métricas definidas, gráficos e
+interpretaciones, y el cierre con conclusiones, recomendaciones y limitaciones.
+
+- **Aplicación:** `AE4/app.py` — desplegada en Streamlit Community Cloud:
+  enlace pendiente de publicar (ver sección "Publicación en Streamlit Cloud")
+- **Documento completo del proyecto:** `AE4/doc/Gonzalez_Jesus_AE4.pdf`
+- **Presentación:** martes 24 de noviembre, 6:50 a 7:00 p. m. (Triple A)
+
+## Ejecutar la aplicación
+
+```bash
+pip install -r requirements.txt
+streamlit run AE4/app.py
+```
+
+La aplicación carga el dataset preparado (`AE3/datos/dataset_preparado.csv`) y las
+cinco tablas de resultados exportadas por el cuaderno de la AE3
+(`AE3/resultados/tabla_p*.csv`), así que los datos tienen una sola fuente: si el
+cuaderno se vuelve a ejecutar, la aplicación muestra lo mismo que el notebook.
+Al abrir cada sección, la app verifica en pantalla que sus cifras coincidan con
+las tablas del cuaderno (aviso "Cifras verificadas contra el cuaderno").
+
+## Qué muestra la aplicación
+
+| Sección | Pregunta de negocio | Métrica | Gráfico |
+| --- | --- | --- | --- |
+| Inicio | Necesidad, preguntas y dataset | Totales del dataset | Tarjetas y tabla de muestra |
+| P1 | Caracterización morfológica por especie | Media, mediana y desviación (cm) | Barras agrupadas |
+| P2 | ¿Difieren más por sépalo o por pétalo? | Coeficiente de variación (%) y rango entre medias | Barras agrupadas |
+| P3 | Relación sépalo-pétalo | Correlación de Pearson global y por especie | Dispersión por especie |
+| P4 | Distribución por tamaño de flor | Categoría por terciles del área del pétalo | Barras apiladas |
+| Cierre | Conclusiones, recomendaciones y limitaciones | | |
+
+Cada pregunta incluye qué decisión podría apoyar el resultado y sus limitaciones
+(el análisis es descriptivo: correlación no es causalidad y las cifras describen
+esta muestra, no otras poblaciones).
+
+## Verificación continua
+
+El flujo de CI incluye el trabajo **Aplicación AE4**: compila `app.py`, verifica
+las dependencias y ejecuta la comprobación de cifras de la aplicación contra las
+tablas del cuaderno en Ubuntu y Windows. Las figuras del documento PDF
+(`AE4/doc/images/`) se generan con las mismas funciones de gráficos de la app.
+
+## Publicación en Streamlit Cloud
+
+La aplicación se publica en Streamlit Community Cloud (gratuito) conectando el
+repositorio de GitHub: al crear la app se indica el repositorio
+`proyecto-integrado-iii-analitica-de-datos`, la rama `main` y la ruta del archivo
+`AE4/app.py`. El despliegue queda vinculado al repositorio: cada cambio de `main`
+reconstruye la aplicación publicada. El enlace definitivo se registra aquí y en
+la entrega de la plataforma.
