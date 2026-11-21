@@ -241,7 +241,7 @@ cuatro preguntas de negocio y sus respuestas, con métricas definidas, gráficos
 interpretaciones, y el cierre con conclusiones, recomendaciones y limitaciones.
 
 - **Aplicación:** `AE4/app.py` — desplegada en Streamlit Community Cloud:
-  <https://ggqebx3zwlwkrcqcbmd3ae.streamlit.app/>
+  <https://ea4-proyecto-integrador-iris.streamlit.app/>
 - **Documento completo del proyecto:** `AE4/doc/Gonzalez_Jesus_AE4.pdf`
 - **Presentación:** martes 24 de noviembre, 6:50 a 7:00 p. m. (Triple A)
 
