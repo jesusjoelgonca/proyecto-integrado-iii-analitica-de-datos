@@ -241,7 +241,7 @@ cuatro preguntas de negocio y sus respuestas, con métricas definidas, gráficos
 interpretaciones, y el cierre con conclusiones, recomendaciones y limitaciones.
 
 - **Aplicación:** `AE4/app.py` — desplegada en Streamlit Community Cloud:
-  enlace pendiente de publicar (ver sección "Publicación en Streamlit Cloud")
+  <https://ggqebx3zwlwkrcqcbmd3ae.streamlit.app/>
 - **Documento completo del proyecto:** `AE4/doc/Gonzalez_Jesus_AE4.pdf`
 - **Presentación:** martes 24 de noviembre, 6:50 a 7:00 p. m. (Triple A)
 
@@ -283,9 +283,7 @@ tablas del cuaderno en Ubuntu y Windows. Las figuras del documento PDF
 
 ## Publicación en Streamlit Cloud
 
-La aplicación se publica en Streamlit Community Cloud (gratuito) conectando el
-repositorio de GitHub: al crear la app se indica el repositorio
-`proyecto-integrado-iii-analitica-de-datos`, la rama `main` y la ruta del archivo
-`AE4/app.py`. El despliegue queda vinculado al repositorio: cada cambio de `main`
-reconstruye la aplicación publicada. El enlace definitivo se registra aquí y en
-la entrega de la plataforma.
+La aplicación está publicada en Streamlit Community Cloud (gratuito) conectada
+al repositorio de GitHub: servicio sobre `AE4/app.py`, rama `main`. Cada cambio
+de `main` reconstruye la aplicación publicada, así que la versión en línea
+siempre coincide con el código de la rama principal.
